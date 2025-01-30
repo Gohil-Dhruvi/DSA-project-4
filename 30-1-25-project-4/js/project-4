@@ -80,11 +80,23 @@ console.log(nextGreaterElements(arr));
 
 // 3. Write a program for a reverse string using Stack. 
 
-function reverseString(str) {
-    return str.split('').reverse().join('');
+function reverseString(input) {
+    let stack = [];
+    let reversedString = "";
+    
+    for (let char of input) {
+        stack.push(char);
+    }
+    
+    while (stack.length > 0) {
+        reversedString += stack.pop();
+    }
+    
+    return reversedString;
 }
 
-let input = "Dhruvi";
-console.log(reverseString(input)); 
+let str = "Hello, World!";
+console.log("Original String:", str);
+console.log("Reversed String:", reverseString(str));
 
-// Expected Output: "ivurhd"
+// Expected Output: !dlroW ,olleH
